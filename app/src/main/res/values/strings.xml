@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Pinochle</string>
+    <string name="welcome_message">Welcome to Pinochle!</string>
+    <string name="made_in">Made in Android Studio</string>
+    <string name="coin_heads">Heads!</string>
+    <string name="coin_tails">Tails!</string>
+    <string name="start_game">Start</string>
+    <string name="lead_label">Lead</string>
+    <string name="chase_label">Chase</string>
+    <string name="human_handLabel">Your Hand</string>
+    <string name="comp_handLabel">Comp Hand</string>
+    <string name="capturePile_Label">Capture Pile</string>
+    <string name="melds_Label">Melds</string>
+    <string name="round_label">Round:</string>
+    <string name="turn_label">Turn:</string>
+    <string name="default_scores">0 : 0</string>
+    <string name="trump_label">Trump</string>
+    <string name="human_label">You</string>
+    <string name="comp_label">Computer</string>
+    <string name="computer_up">Computer is up!</string>
+    <string name="human_up">You are up!</string>
+    <string name="log_label">Log</string>
+    <string name="log_default_text">Turn info will go here.</string>
+    <string name="comp_won_turn">Computer won the turn!</string>
+    <string name="human_won_turn">You won the turn!</string>
+    <string name="meld_message">Would you like to declare a meld?</string>
+    <string name="yes_choice">Yes</string>
+    <string name="no_choice">No</string>
+    <string name="continue_choice">Continue</string>
+    <string name="loading_text">Loading...</string>
+    <string name="continue_label">Continue</string>
+    <string name="stock_label">Stock</string>
+    <string name="tap_notice">(Tap its hand to play)</string>
+</resources>

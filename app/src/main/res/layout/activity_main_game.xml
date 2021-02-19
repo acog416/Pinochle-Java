@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00BCD4"
+    tools:context=".MainGameActivity">
+
+    <Button
+        android:id="@+id/stock_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/stock_label"
+        app:layout_constraintBottom_toTopOf="@+id/continue_button"
+        app:layout_constraintEnd_toStartOf="@+id/chaseBack"
+        app:layout_constraintStart_toEndOf="@+id/leadBack" />
+
+    <ImageView
+        android:id="@+id/save_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/help_icon"
+        app:srcCompat="@drawable/save_icon" />
+
+    <ImageView
+        android:id="@+id/help_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/compCaptureLabel"
+        app:srcCompat="@drawable/help_icon" />
+
+    <TextView
+        android:id="@+id/humanCaptureLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="1dp"
+        android:text="@string/capturePile_Label"
+        app:layout_constraintBottom_toTopOf="@+id/humanCaptureView"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/humanMeldsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="1dp"
+        android:text="@string/melds_Label"
+        app:layout_constraintBottom_toTopOf="@+id/humanMeldsView"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/compCaptureLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="3dp"
+        android:text="@string/capturePile_Label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/compCaptureView" />
+
+    <TextView
+        android:id="@+id/compMeldsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/melds_Label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/compMeldView" />
+
+    <TextView
+        android:id="@+id/round_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/round_label"
+        app:layout_constraintStart_toEndOf="@+id/leadLabel"
+        app:layout_constraintTop_toBottomOf="@+id/comp_scores" />
+
+    <TextView
+        android:id="@+id/round_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@+id/round_label"
+        app:layout_constraintTop_toBottomOf="@+id/comp_scores" />
+
+    <TextView
+        android:id="@+id/turn_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:text="@string/turn_label"
+        app:layout_constraintStart_toStartOf="@+id/round_label"
+        app:layout_constraintTop_toBottomOf="@+id/round_label" />
+
+    <TextView
+        android:id="@+id/turn_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="0"
+        app:layout_constraintStart_toEndOf="@+id/turn_label"
+        app:layout_constraintTop_toBottomOf="@+id/round_count" />
+
+    <TextView
+        android:id="@+id/current_player_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Someone is up"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.245"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/turn_label" />
+
+    <ImageView
+        android:id="@+id/leadBack"
+        android:layout_width="60dp"
+        android:layout_height="103dp"
+        android:layout_marginStart="83dp"
+        android:layout_marginEnd="125dp"
+        android:contentDescription="Lead space"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/chaseBack"
+        app:layout_constraintHorizontal_bias="0.882"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.668"
+        app:srcCompat="@drawable/back" />
+
+    <ImageView
+        android:id="@+id/leadSpace"
+        android:layout_width="60dp"
+        android:layout_height="92dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/leadBack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/leadBack"
+        app:layout_constraintVertical_bias="0.545"
+        app:srcCompat="@drawable/empty_black" />
+
+    <TextView
+        android:id="@+id/leadLabel"
+        android:layout_width="60dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="4dp"
+        android:text="@string/lead_label"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/leadBack"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/chaseLabel"
+        android:layout_width="60dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="168dp"
+        android:text="@string/chase_label"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/chaseBack"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/chaseBack"
+        android:layout_width="60dp"
+        android:layout_height="103dp"
+        android:layout_marginEnd="168dp"
+        android:contentDescription="Chase space"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.668"
+        app:srcCompat="@drawable/back" />
+
+    <ImageView
+        android:id="@+id/chaseSpace"
+        android:layout_width="60dp"
+        android:layout_height="91dp"
+        android:layout_marginEnd="168dp"
+        app:layout_constraintBottom_toBottomOf="@+id/chaseBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/chaseBack"
+        app:srcCompat="@drawable/empty_red" />
+
+    <TextView
+        android:id="@+id/comp_scores"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/default_scores"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/compCaptureView" />
+
+    <TextView
+        android:id="@+id/human_scores"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/default_scores"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/humanCaptureView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/trump_label"
+        android:layout_width="60dp"
+        android:layout_height="24dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/trump_label"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/human_scores"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.284"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/trump_back"
+        app:layout_constraintVertical_bias="0.013" />
+
+    <ImageView
+        android:id="@+id/trump_back"
+        android:layout_width="60dp"
+        android:layout_height="103dp"
+        app:layout_constraintBottom_toTopOf="@+id/chaseLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.284"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/back" />
+
+    <ImageView
+        android:id="@+id/trump_space"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/trump_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.284"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/trump_back"
+        app:layout_constraintVertical_bias="0.538"
+        app:srcCompat="@drawable/back" />
+
+    <TextView
+        android:id="@+id/comp_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/comp_label"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/compMeldsLabel" />
+
+    <TextView
+        android:id="@+id/human_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="28dp"
+        android:text="@string/human_label"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/humanMeldsLabel"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+<!--    <shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle" >-->
+<!--        <solid android:color="@android:color/white" />-->
+<!--        <stroke android:width="1dip" android:color="#4fa5d5"/>-->
+<!--    </shape>-->
+    <HorizontalScrollView
+        android:id="@+id/humanHandView"
+        android:layout_width="392dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#D1D1D1"
+        android:clickable="false"
+        android:fillViewport="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:id="@+id/humanHandLL"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal" />
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:id="@+id/humanCaptureView"
+        android:layout_width="190dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="10dp"
+        android:background="#D1D1D1"
+        app:layout_constraintBottom_toTopOf="@+id/humanHandView"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:id="@+id/humanCaptureLL"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#D1D1D1"
+            android:orientation="horizontal" />
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:id="@+id/humanMeldsView"
+        android:layout_width="190dp"
+        android:layout_height="61dp"
+        android:layout_marginEnd="10dp"
+        android:background="#D1D1D1"
+        app:layout_constraintBottom_toTopOf="@+id/humanHandView"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:id="@+id/humanMeldLL"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#D1D1D1"
+            android:orientation="horizontal" />
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:id="@+id/compCaptureView"
+        android:layout_width="190dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="10dp"
+        android:background="#D1D1D1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/compHandView">
+
+        <LinearLayout
+            android:id="@+id/compCaptureLL"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" />
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:id="@+id/compMeldView"
+        android:layout_width="190dp"
+        android:layout_height="61dp"
+        android:layout_marginEnd="10dp"
+        android:background="#D1D1D1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/compHandView">
+
+        <LinearLayout
+            android:id="@+id/compMeldLL"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" />
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:id="@+id/compHandView"
+        android:layout_width="392dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
+        android:background="#D1D1D1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/compHandLL"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" />
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/log_view"
+        android:layout_width="149dp"
+        android:layout_height="289dp"
+        android:layout_marginEnd="1dp"
+        android:background="#00A2B9"
+        android:scrollbarStyle="insideInset"
+        android:scrollbars="vertical"
+        android:text="@string/log_default_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/log_label" />
+
+    <TextView
+        android:id="@+id/log_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="123dp"
+        android:text="@string/log_label"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/comp_label" />
+
+    <Button
+        android:id="@+id/continue_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="@string/continue_label"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/chaseBack"
+        app:layout_constraintStart_toEndOf="@+id/leadBack"
+        app:layout_constraintTop_toBottomOf="@+id/trump_label" />
+
+    <TextView
+        android:id="@+id/tap_notice_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/tap_notice"
+        app:layout_constraintStart_toEndOf="@+id/save_icon"
+        app:layout_constraintTop_toBottomOf="@+id/current_player_label" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

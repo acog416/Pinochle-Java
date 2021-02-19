@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="melds">
+        <item>Flush</item>
+        <item>Royal Marriage</item>
+        <item>Marriage</item>
+        <item>Dix</item>
+        <item>Four Aces</item>
+        <item>Four Kings</item>
+        <item>Four Queens</item>
+        <item>Four Jacks</item>
+        <item>Pinochle</item>
+    </string-array>
+</resources>
